@@ -1,5 +1,5 @@
 {
-  "name": "sample-turbo",
+  "name": "@shahilyadav/turbo",
   "private": true,
   "scripts": {
     "build": "turbo build",
