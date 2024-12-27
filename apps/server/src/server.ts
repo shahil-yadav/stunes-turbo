@@ -10,7 +10,9 @@ const app = new App([
   new PlaylistController()
 ]).getApp()
 
-export default {
-  port: 4320,
-  fetch: app.fetch
-}
+export default app
+
+// export default {
+//   port: 4320,
+//   fetch: app.fetch
+// }

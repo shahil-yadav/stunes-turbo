@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a6804c64-9a79-46aa-b363-4adbba3343b3" name="Changes" comment="Monorepo done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/www/lib/constants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/www/lib/constants.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +146,8 @@
       <workItem from="1735244541814" duration="528000" />
       <workItem from="1735249292075" duration="3339000" />
       <workItem from="1735257047843" duration="2699000" />
-      <workItem from="1735260821969" duration="1035000" />
+      <workItem from="1735260821969" duration="2985000" />
+      <workItem from="1735285231855" duration="11000" />
     </task>
     <servers />
   </component>
