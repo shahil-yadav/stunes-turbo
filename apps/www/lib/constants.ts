@@ -6,4 +6,7 @@ export const selectedAudioIndex = -1;
 export const language = "english,hindi";
 export const SECONDS_REQUIRED_TO_INSERT_IN_THE_HISTORY = 30;
 export const LIMIT_RECOMMENDATION_SONGS = 5;
-export const BASE_URL = "http://localhost:3000/api";
+
+export const BASE_URL = process.env.BASE_URL;
+if (!BASE_URL)
+  throw new Error("BASE_URL is required, please set the env variables");

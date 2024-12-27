@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 import { StoreProvider } from "./StoreProvider";
 
 export const metadata: Metadata = {
-  title: "sTunes",
+  title: "stunes",
   description: "Made by Shahil Yadav, jiosaavn wrapper",
 };
 

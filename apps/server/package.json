@@ -42,6 +42,7 @@
     "@hono/zod-openapi": "^0.16.2",
     "@hono/zod-validator": "^0.3.0",
     "@scalar/hono-api-reference": "^0.5.149",
+    "cheerio": "^1.0.0",
     "hono": "^4.6.3",
     "node-forge": "^1.3.1",
     "zod": "^3.23.8"
