@@ -1,0 +1,11 @@
+---
+import Twikoo from "~/components/react/comment/twikoo.tsx"
+import { common } from "~/config"
+import "~/styles/comment.css"
+---
+
+{
+  common.comments.enabled && common.comments.twikoo.enabled && (
+    <Twikoo client:only="react" />
+  )
+}

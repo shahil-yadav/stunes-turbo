@@ -5,9 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6804c64-9a79-46aa-b363-4adbba3343b3" name="Changes" comment="Monorepo done">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
     </list>
@@ -30,30 +27,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/shahilyadav/Documents/stunes-turbo/apps/www/public",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.build.executor": "Run",
-    "npm.docs > build.executor": "Run",
-    "npm.format.executor": "Run",
-    "npm.server > build.executor": "Run",
-    "npm.web > build.executor": "Run",
-    "npm.www > build.executor": "Run",
-    "npm.www > check-types.executor": "Run",
-    "npm.www > dev.executor": "Run",
-    "prettierjs.PrettierConfiguration.Package": "/Users/shahilyadav/Documents/stunes-turbo/node_modules/prettier",
-    "ts.external.directory.path": "/Users/shahilyadav/Documents/stunes-turbo/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/shahilyadav/Documents/stunes-turbo/apps/www/public&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.build.executor&quot;: &quot;Run&quot;,
+    &quot;npm.docs &gt; build.executor&quot;: &quot;Run&quot;,
+    &quot;npm.format.executor&quot;: &quot;Run&quot;,
+    &quot;npm.server &gt; build.executor&quot;: &quot;Run&quot;,
+    &quot;npm.web &gt; build.executor&quot;: &quot;Run&quot;,
+    &quot;npm.www &gt; build.executor&quot;: &quot;Run&quot;,
+    &quot;npm.www &gt; check-types.executor&quot;: &quot;Run&quot;,
+    &quot;npm.www &gt; dev.executor&quot;: &quot;Run&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/shahilyadav/Documents/stunes-turbo/node_modules/prettier&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/shahilyadav/Documents/stunes-turbo/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/apps/www/public" />
@@ -148,7 +145,8 @@
       <workItem from="1735243378040" duration="548000" />
       <workItem from="1735244541814" duration="528000" />
       <workItem from="1735249292075" duration="3339000" />
-      <workItem from="1735257047843" duration="2313000" />
+      <workItem from="1735257047843" duration="2699000" />
+      <workItem from="1735260821969" duration="1035000" />
     </task>
     <servers />
   </component>

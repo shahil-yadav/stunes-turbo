@@ -1,0 +1,8 @@
+article code {
+  @apply rounded bg-orange-500/50 px-1 dark:bg-orange-500/80;
+}
+
+article code::before,
+article code::after {
+  content: none !important;
+}

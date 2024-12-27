@@ -1,0 +1,82 @@
+---
+import { en, zh } from "~/config"
+import { getLangFromUrl, useTranslations } from "~/i18n/utils"
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+
+const { home, archive, custom, links, about } =
+  lang === "zh" ? zh.navigation : en.navigation
+---
+
+<div
+  transition:persist
+  class="mb-10 mt-4 flex gap-4 overflow-x-auto whitespace-nowrap text-lg [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+>
+  {
+    home && (
+      <a
+        href={`/${lang}`}
+        class="hover:underline hover:underline-offset-4"
+        data-umami-event="nav-home"
+        aria-label={t("nav.home")}
+        title={t("nav.home")}
+      >
+        <p>{t("nav.home")}</p>
+      </a>
+    )
+  }
+  {
+    archive && (
+      <a
+        href={`/${lang}/archive`}
+        class="hover:underline hover:underline-offset-4"
+        data-umami-event="nav-archive"
+        aria-label={t("nav.archive")}
+        title={t("nav.archive")}
+      >
+        <p>{t("nav.archive")}</p>
+      </a>
+    )
+  }
+  {
+    custom?.map((tab) => (
+      <a
+        href={tab.link}
+        class="hover:underline hover:underline-offset-4"
+        target="_blank"
+        data-umami-event={`nav-${tab.label}`}
+        aria-label={tab.label}
+        title={tab.label}
+      >
+        <p>{tab.label}</p>
+      </a>
+    ))
+  }
+  {
+    links && (
+      <a
+        href={`/${lang}/links`}
+        class="hover:underline hover:underline-offset-4"
+        data-umami-event="nav-links"
+        aria-label={t("nav.links")}
+        title={t("nav.links")}
+      >
+        <p>{t("nav.links")}</p>
+      </a>
+    )
+  }
+  {
+    about && (
+      <a
+        href={`/${lang}/about`}
+        class="hover:underline hover:underline-offset-4"
+        data-umami-event="nav-about"
+        aria-label={t("nav.about")}
+        title={t("nav.about")}
+      >
+        <p>{t("nav.about")}</p>
+      </a>
+    )
+  }
+</div>
