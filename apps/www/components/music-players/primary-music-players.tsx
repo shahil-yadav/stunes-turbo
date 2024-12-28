@@ -81,12 +81,12 @@ export function PrimaryMusicPlayer() {
             activeSongDetails?.error?.toString()
           ) : (
             <>
-              <p className="text-lg font-semibold">
+              <p className="text-lg truncate font-semibold">
                 {activeSongDetails?.data?.name
                   ? parse(activeSongDetails.data.name)
                   : "---"}
               </p>
-              <p className="text-xs font-semibold">
+              <p className="text-xs truncate font-semibold">
                 {activeSongDetails?.data?.artistNames ?? "-----"}
               </p>
             </>

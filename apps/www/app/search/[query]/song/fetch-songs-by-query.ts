@@ -1,5 +1,5 @@
 import { SongsZodSchema } from "@/app/album/fetch-album-songs";
-import { createSongsPayload } from "@/app/playlist/data/fetch-playlist-songs";
+import { createSongsPayload } from "@/app/playlist/fetch-playlist-songs";
 import { BASE_URL } from "@/lib/constants";
 
 export async function fetchSongsByQuery(query: string) {

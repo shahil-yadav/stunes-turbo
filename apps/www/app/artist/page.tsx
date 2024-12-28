@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 
-import { fetchArtist } from "@/app/artist/data/fetch-artist";
+import { fetchArtist } from "@/app/artist/fetch-artist";
 import { DisplayImageCard } from "@/components/horizontal-cards/display-image-card";
 import { HorizontalScrollableContainer } from "@/components/horizontal-cards/horizontal-scrollable-container";
 import { ListSongCard } from "@/components/horizontal-cards/list-song-card";

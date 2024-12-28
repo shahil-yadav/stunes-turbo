@@ -20,6 +20,7 @@ export async function fetchHomepage() {
   const response = await fetch(`${BASE_URL}/homepage`, {
     cache: "force-cache",
   });
+
   if (!response.ok) {
     throw new Error("Failed to fetch homepage section " + response.status);
   }

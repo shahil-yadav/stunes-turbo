@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 import { SongsZodSchema } from "@/app/album/fetch-album-songs";
-import { createSongsPayload } from "@/app/playlist/data/fetch-playlist-songs";
+import { createSongsPayload } from "@/app/playlist/fetch-playlist-songs";
 import { BASE_URL } from "@/lib/constants";
 import { ImageQualityEnum } from "@/lib/types/enum";
 
@@ -36,7 +36,9 @@ export function createAlbumPayload(albums) {
 }
 
 export async function fetchArtist(artistId: string) {
-  const response = await fetch(`${BASE_URL}/artists/${artistId}`);
+  const response = await fetch(`${BASE_URL}/artists/${artistId}`, {
+    cache: "force-cache",
+  });
 
   if (!response.ok) {
     throw new Error(

@@ -26,15 +26,13 @@ type ListSongCardProps = SongReduxPlaylistSchema & SongCardUiSchema;
 
 export function ListSongCard(props: ListSongCardProps) {
   const dispatch = useAppDispatch();
+  function dispatchAddSongInThePlaylist() {
+    dispatch(addSongsInThePlaylist([{ url: props.url, songId: props.songId }]));
+  }
+
   return (
     <div className="flex min-w-64 items-center gap-3 border-b-2 border-dotted px-2 py-2">
-      <button
-        onClick={() =>
-          dispatch(
-            addSongsInThePlaylist([{ url: props.url, songId: props.songId }]),
-          )
-        }
-      >
+      <button onClick={dispatchAddSongInThePlaylist}>
         <div className="flex size-20 items-center justify-center">
           {props.songImageUrl ? (
             <img className="size-20 object-cover" src={props.songImageUrl} />
@@ -43,16 +41,11 @@ export function ListSongCard(props: ListSongCardProps) {
           )}
         </div>
       </button>
-      <div
-        onClick={() =>
-          dispatch(
-            addSongsInThePlaylist([{ url: props.url, songId: props.songId }]),
-          )
-        }
-        className="grow cursor-pointer space-y-4"
-      >
+      <div className="grow cursor-pointer space-y-4">
         <div>
-          <p className="text-lg">{parse(props.label)}</p>
+          <button onClick={dispatchAddSongInThePlaylist}>
+            <p className="text-lg">{parse(props.label)}</p>
+          </button>
         </div>
         <div className="flex items-end gap-5 text-gray-500">
           <span>{prettySeconds(props.duration)}</span>
