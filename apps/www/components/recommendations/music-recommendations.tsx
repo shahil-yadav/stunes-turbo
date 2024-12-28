@@ -31,17 +31,15 @@ function InnerMusicRecommendations({ songId }: { songId: string }) {
   }, [swr.data, swr.error, state]);
 
   return (
-    process.env.NODE_ENV === "development" && (
-      <div className="absolute bg-gray-300 top-0 left-0">
-        <p>{state && "AI MODE ENABLED"}</p>
-        <ul className="list-decimal">
-          {swr.data?.map((song) => (
-            <li key={song.songId} className="text-[10px]">
-              {song.url}
-            </li>
-          ))}
-        </ul>
-      </div>
-    )
+    <div className="absolute bg-gray-300 top-0 left-0">
+      <p>{state && "AI MODE ENABLED"}</p>
+      <ul className="list-decimal">
+        {swr.data?.map((song) => (
+          <li key={song.songId} className="text-[10px]">
+            {song.url}
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
