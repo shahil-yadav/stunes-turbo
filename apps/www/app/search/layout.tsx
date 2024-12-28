@@ -6,7 +6,6 @@ import { useRouter } from "next/navigation";
 import React from "react";
 
 import { Input } from "@/components/ui/input";
-import { ScrollToTop } from "@/components/layout/scroll-to-top";
 
 export default function Layout(props: { children: Readonly<React.ReactNode> }) {
   const [query, setQuery] = React.useState<string>();
@@ -20,7 +19,6 @@ export default function Layout(props: { children: Readonly<React.ReactNode> }) {
   return (
     <div>
       <div id="search-bar" className="my-2">
-        <ScrollToTop />
         <div className="flex top-2 items-center">
           <div className="flex size-10 items-center justify-center border border-r-0">
             <Search className="size-5" />
