@@ -1,9 +1,11 @@
 {
   "$schema": "https://turbo.build/schema.json",
+
   "ui": "tui",
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
+      "env": ["BASE_URL"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
       "outputs": [".next/**", "!.next/cache/**"]
     },
