@@ -32,6 +32,7 @@ export function BottomNavigation() {
           className={cn(isActive(item.href) && "text-foreground")}
           href={item.href}
           key={item.href}
+          scroll={false}
         >
           <div className="flex flex-col items-center">
             <span>{item.label}</span>
