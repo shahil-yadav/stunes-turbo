@@ -2,9 +2,9 @@ import React from "react";
 import { z } from "zod";
 
 import { fetchAlbumSongs } from "@/app/album/fetch-album-songs";
-import { fetchArtist } from "@/app/artist/data/fetch-artist";
-import { fetchPlaylistSongs } from "@/app/playlist/data/fetch-playlist-songs";
-import { fetchSongs } from "@/app/song/data/fetch-songs";
+import { fetchArtist } from "@/app/artist/fetch-artist";
+import { fetchPlaylistSongs } from "@/app/playlist/fetch-playlist-songs";
+import { fetchSongs } from "@/app/song/fetch-songs";
 import { ListSongCard } from "@/components/horizontal-cards/list-song-card";
 import { ListRoundCard } from "@/components/horizontal-cards/ui-cards";
 import { BASE_URL } from "@/lib/constants";

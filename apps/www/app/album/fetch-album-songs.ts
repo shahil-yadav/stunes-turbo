@@ -1,7 +1,7 @@
 import { z } from "zod";
 
-import { createSongsPayload } from "@/app/playlist/data/fetch-playlist-songs";
-import { createAlbumPayload } from "@/app/song/data/fetch-songs";
+import { createSongsPayload } from "@/app/playlist/fetch-playlist-songs";
+import { createAlbumPayload } from "@/app/song/fetch-songs";
 import { BASE_URL } from "@/lib/constants";
 
 export const SongsZodSchema = z
@@ -28,7 +28,9 @@ export const ZodSchema = z.object({
 });
 
 export async function fetchAlbumSongs(id: string) {
-  const response = await fetch(`${BASE_URL}/albums?id=${id}`);
+  const response = await fetch(`${BASE_URL}/albums?id=${id}`, {
+    cache: "force-cache",
+  });
 
   if (!response.ok) {
     throw new Error(

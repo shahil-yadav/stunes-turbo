@@ -1,4 +1,4 @@
-import { FavouriteSongs } from "@/app/library/favourites/favourite-songs";
+import { FavouriteSongs } from "@/app/favourites/favourite-songs";
 
 export default function Page() {
   return (

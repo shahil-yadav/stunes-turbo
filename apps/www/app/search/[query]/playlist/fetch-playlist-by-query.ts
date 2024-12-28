@@ -1,7 +1,7 @@
 import {
   AlbumsZodArtistPageSchema,
   createAlbumPayload,
-} from "@/app/artist/data/fetch-artist";
+} from "@/app/artist/fetch-artist";
 import { BASE_URL } from "@/lib/constants";
 
 export async function fetchPlaylistByQuery(query: string) {

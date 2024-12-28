@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 
-import { fetchSongs } from "@/app/song/data/fetch-songs";
+import { fetchSongs } from "@/app/song/fetch-songs";
 import { DisplayImageCard } from "@/components/horizontal-cards/display-image-card";
 import { DisplaySongControls } from "@/components/horizontal-cards/display-song-controls";
 import { ListSongCard } from "@/components/horizontal-cards/list-song-card";

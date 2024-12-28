@@ -3,7 +3,7 @@
 import { Heart, History } from "lucide-react";
 import Link from "next/link";
 
-import { FavouriteSongs } from "@/app/library/favourites/favourite-songs";
+import { FavouriteSongs } from "@/app/favourites/favourite-songs";
 import { LibrarySongs } from "@/app/library/library-song";
 import { Button } from "@/components/ui/button";
 import {
@@ -20,13 +20,13 @@ export default function Page() {
     <div className="space-y-5 pb-10">
       <div className="flex gap-x-2">
         <Button variant="outline">
-          <Link href="/library/history" className="flex">
+          <Link href="/history" className="flex">
             <History className="mr-2 size-5" /> History
           </Link>
         </Button>
 
         <Button variant="outline">
-          <Link href="/library/favourites" className="flex">
+          <Link href="/favourites" className="flex">
             <Heart className="mr-2 size-5 fill-red-500 stroke-red-500" />{" "}
             Favourites
           </Link>
