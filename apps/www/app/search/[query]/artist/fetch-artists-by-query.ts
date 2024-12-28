@@ -5,7 +5,9 @@ import {
 import { BASE_URL } from "@/lib/constants";
 
 export async function fetchArtistsByQuery(query: string) {
-  const response = await fetch(`${BASE_URL}/search/artists?query=${query}`);
+  const response = await fetch(`${BASE_URL}/search/artists?query=${query}`, {
+    cache: "force-cache",
+  });
   if (!response.ok) {
     throw new Error(
       `Failed to fetch playlists by search query of ${query}, ${response.statusText}`,

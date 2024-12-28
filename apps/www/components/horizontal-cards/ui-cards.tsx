@@ -6,6 +6,7 @@ import { z } from "zod";
 
 import { Skeleton } from "@/components/ui/skeleton";
 import { cn, prettySeconds } from "@/lib/utils";
+import parse from "html-react-parser";
 
 interface ListRoundCardProps {
   id: string;
@@ -66,7 +67,7 @@ export function SingleHorizontalCard(props: SingleHorizontalCardProps) {
       />
       <div className="grow space-y-4">
         <div>
-          <p className="">{props.title}</p>
+          <p className="">{parse(props.title)}</p>
           <p className="text-gray-500">{props.type}</p>
         </div>
         <div className="space-x-5 text-gray-500">

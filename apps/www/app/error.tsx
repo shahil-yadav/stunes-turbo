@@ -21,7 +21,7 @@ export default function Error({
     <div className="w-full">
       <p>F*** ☠️</p>
       <img width={500} height={250} src={"/error.webp"} alt="error" />
-      <p className="text-wrap text-red-600">{error.message}</p>
+      <p className="text-wrap text-red-600">Try retrying again maybe :(</p>
       <div className="mt-4 space-x-2">
         <Button
           variant="destructive"

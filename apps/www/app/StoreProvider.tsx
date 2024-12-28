@@ -7,9 +7,9 @@ import { Provider } from "react-redux";
 import { persistStore } from "redux-persist";
 import { Persistor } from "redux-persist/es/types";
 import { PersistGate } from "redux-persist/integration/react";
-
 import { Audio } from "@/lib/redux/audio";
 import { type AppStore, makeStore } from "@/lib/redux/store";
+import { MusicRecommendations } from "@/components/recommendations/music-recommendations";
 
 interface Props {
   readonly children: ReactNode;
@@ -41,6 +41,7 @@ export const StoreProvider = ({ children }: Props) => {
       <PersistGate loading={null} persistor={persistRef.current}>
         {children}
       </PersistGate>
+      <MusicRecommendations />
       <Audio />
     </Provider>
   );

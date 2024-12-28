@@ -3,7 +3,9 @@ import { createSongsPayload } from "@/app/playlist/fetch-playlist-songs";
 import { BASE_URL } from "@/lib/constants";
 
 export async function fetchSongsByQuery(query: string) {
-  const response = await fetch(`${BASE_URL}/search/songs?query=${query}`);
+  const response = await fetch(`${BASE_URL}/search/songs?query=${query}`, {
+    cache: "force-cache",
+  });
   if (!response.ok) {
     throw new Error(
       `Failed to fetch songs by search query of ${query}, ${response.statusText}`,
