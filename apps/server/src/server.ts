@@ -2,7 +2,7 @@ import { AlbumController, ArtistController, HomepageController, SearchController
 import { PlaylistController } from '#modules/playlists/controllers'
 import { App } from './app'
 
-const app = new App([
+export const app = new App([
   new SearchController(),
   new SongController(),
   new AlbumController(),
@@ -10,8 +10,3 @@ const app = new App([
   new PlaylistController(),
   new HomepageController()
 ]).getApp()
-
-export default {
-  port: 4320,
-  fetch: app.fetch
-}

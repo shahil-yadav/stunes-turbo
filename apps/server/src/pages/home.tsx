@@ -198,9 +198,52 @@ Home.get('/', (c) => {
                 </div>
               </div>
             </div>
+            <ShahilYadav />
           </div>
         </main>
       </body>
     </html>
   )
 })
+
+function ShahilYadav() {
+  return (
+    <div className="p-4 sm:p-8 hover:bg-opacity-5 hover:bg-white rounded-lg duration-100 sm:col-span-4">
+      <div className="flex flex-col">
+        <span className="text-xs uppercase bg-opacity-15 rounded text-center max-w-fit px-2 py-1 font-bold tracking-wide bg-rose-500 text-rose-500">
+          Contact
+        </span>
+        <span className="text-neutral-200 font-bold text-lg sm:text-xl md:text-2xl mt-2">Shahil Yadav</span>
+        <div className="text-neutral-500 mt-2">
+          Have a question or need help? Reach out on{' '}
+          <a
+            href="https://github.com/shahil-yadav"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:underline text-indigo-500"
+          >
+            GitHub
+          </a>
+          ,{' '}
+          <a
+            href="https://www.linkedin.com/in/shahilyadav"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:underline text-sky-500"
+          >
+            LinkedIn
+          </a>
+          , or{' '}
+          <a
+            href="https://t.me/sumitkolhe"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:underline text-pink-500"
+          >
+            {'<Personal Website>'}
+          </a>
+        </div>
+      </div>
+    </div>
+  )
+}

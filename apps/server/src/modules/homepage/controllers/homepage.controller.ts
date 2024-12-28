@@ -1,7 +1,6 @@
 import type { Routes } from '#common/types'
 import { createRoute, OpenAPIHono, z } from '@hono/zod-openapi'
 import { HomepageService } from '#modules/homepage/services'
-
 import { HomepageModel } from '#modules/homepage/models/homepage-model'
 
 export class HomepageController implements Routes {
@@ -46,7 +45,7 @@ export class HomepageController implements Routes {
         try {
           const data = await this.homepageService.getTrendingSection()
           return ctx.json({ success: true, data })
-        } catch (err) {
+        } catch {
           return ctx.json({ success: false, message: 'Internal server error' }, 500)
         }
       }

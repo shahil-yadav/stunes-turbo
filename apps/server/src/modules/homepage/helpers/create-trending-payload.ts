@@ -1,14 +1,17 @@
-import { filterAlbumSongsPlaylist } from '#modules/homepage/helpers/filter-album-songs-playlist'
-
 export function createTrendingPayload(data: any) {
   const formattedData = data.map((item: any) => ({
+    type: item?.type,
+    id: item?.id,
     title: item?.title,
-    data: item?.data.filter(filterAlbumSongsPlaylist).map((entry: any) => ({
-      type: entry?.type,
-      id: entry?.id,
-      title: entry?.title?.text,
-      image: entry?.image[0]
-    }))
+    image: item?.image
   }))
-  return formattedData
+
+  const payload = [
+    {
+      title: 'Trending',
+      data: formattedData
+    }
+  ]
+
+  return payload
 }

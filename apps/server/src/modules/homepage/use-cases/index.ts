@@ -1,1 +1,1 @@
-export * from './get-trending-section'
+export * from './get-trending-section.use-case'
