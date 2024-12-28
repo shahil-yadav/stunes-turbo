@@ -19,7 +19,7 @@ export default function Layout(props: { children: Readonly<React.ReactNode> }) {
   return (
     <div>
       <div className="my-2">
-        <div className="flex items-center">
+        <div id="#search" className="flex items-center">
           <div className="flex size-10 items-center justify-center border border-r-0">
             <Search className="size-5" />
           </div>
