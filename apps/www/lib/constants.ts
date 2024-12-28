@@ -9,4 +9,4 @@ loadEnvConfig(projectDir);
 
 export const BASE_URL = process.env.BASE_URL;
 if (!BASE_URL)
-  throw new Error("BASE_URL is required, please set the env variables");
+  throw new Error(`BASE_URL is required, vercel path = ${projectDir}`);
