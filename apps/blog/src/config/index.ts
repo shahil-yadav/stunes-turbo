@@ -8,7 +8,7 @@ export const common = {
     favicon: "/avatar.png",
     url: "https://blog.sunguoqi.com",
   },
-  googleAnalyticsId: "",
+  googleAnalyticsId: "G-E66E1Z0ZG6",
   social: [
     {
       icon: Linkedin,
