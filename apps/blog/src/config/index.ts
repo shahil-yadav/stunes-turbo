@@ -1,4 +1,4 @@
-import { Github, Twitter } from "lucide-react"
+import { Github, Linkedin, Twitter } from "lucide-react"
 
 export const defaultLanguage: string = "en"
 
@@ -11,30 +11,30 @@ export const common = {
   googleAnalyticsId: "",
   social: [
     {
-      icon: Twitter,
+      icon: Linkedin,
       label: "X",
-      link: "https://x.com/sun0225SUN",
+      link: "https://www.linkedin.com/in/shahilyadav",
     },
     {
       icon: Github,
       label: "GitHub",
-      link: "https://github.com/sun0225SUN",
+      link: "https://github.com/shahil-yadav",
     },
   ],
-  rss: true,
+  rss: false,
   navigation: {
     home: true,
-    archive: true,
-    custom: [
+    archive: false,
+    /*custom: [
       {
         label: "CamLife",
         link: "https://camlife.cn",
       },
-    ],
-    links: true,
-    about: true,
+    ],*/
+    links: false,
+    about: false,
   },
-  latestPosts: 8,
+  latestPosts: 3,
   comments: {
     enabled: true,
     twikoo: {
@@ -84,21 +84,21 @@ export const zh = {
 
 export const en = {
   ...common,
-  siteName: "Guoqi Sun",
+  siteName: "Shahil Yadav",
   meta: {
     ...common.meta,
-    title: "Guoqi Sun",
-    slogan: "A Romantic Rationalist",
-    description: "Reading, Photography, Programming, Traveling",
+    title: "Shahil Yadav",
+    slogan: "Just a dev",
+    description: "Likes to tinker around softwares",
   },
   navigation: {
     ...common.navigation,
-    custom: [
-      {
-        label: "CamLife",
-        link: "https://camlife.cn",
-      },
-    ],
+    // custom: [
+    //   {
+    //     label: "CamLife",
+    //     link: "https://camlife.cn",
+    //   },
+    // ],
   },
   pageMeta: {
     archive: {

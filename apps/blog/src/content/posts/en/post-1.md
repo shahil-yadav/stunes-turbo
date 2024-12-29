@@ -1,25 +1,22 @@
 ---
-title: "My First Blog Post"
-pubDate: 2020-07-01
-description: "This is the first post of my new Astro blog."
-ogImage: "https://sunguoqi.com/me.png"
-author: "Astro Learner"
+title: "Reason to build stunes in the first place"
+author: Shahil Yadav
+description: "Sharing my experience and insights on building a personal blog with Astro"
 image:
-  url: "https://docs.astro.build/assets/rose.webp"
-  alt: "The Astro logo on a dark background with a pink glow."
-tags: ["astro", "blogging", "learning-in-public"]
+  url: "https://docs.astro.build/assets/full-logo-light.png"
+  alt: "Astro logo with full text"
+pubDate: 2024-12-29
+tags: ["motivation",]
 ---
 
-Welcome to my _new blog_ about learning Astro! Here, I will share my learning journey as I build a new website.
+### What Motivated Me To Build This? (Spoiler: Procrastination)
 
-## What I've accomplished
+So picture this - there I was, supposed to be studying for prelims. But instead? Scrolling through ig reels like a zombie and vibing to Spotify. Classic. So I thought maybe I can use my overthinkin to do something good basically
 
-1. **Installing Astro**: First, I created a new Astro project and set up my online accounts.
+### The "Productive" Overthinking
+Then my brain did that thing where it's like "hey, remember that old app? Let's mess with that" And being the professional procrastinator I am, I went "yeah seems legit"
 
-2. **Making Pages**: I then learned how to make pages by creating new `.astro` files and placing them in the `src/pages/` folder.
+### The Real Story
+Look, I just like breaking stuff and putting it back together. So here we are - me building this thing instead of preparing for exams. At least I'm coding... right?
 
-3. **Making Blog Posts**: This is my first blog post! I now have Astro pages and Markdown posts!
-
-## What's next
-
-I will finish the Astro tutorial, and then keep adding more posts. Watch this space for more to come.
+*written during what should've been study time... again*

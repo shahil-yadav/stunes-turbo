@@ -47,7 +47,7 @@ export default function Page() {
         <p className="text-3xl font-bold">Recently Played</p>
         <LibrarySongs LIMIT={5} />
         {historySongIds.length > 5 && (
-          <Link className="text-lg" href="/library/history">
+          <Link className="text-lg" href="/history">
             View all history
           </Link>
         )}
