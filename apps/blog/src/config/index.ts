@@ -93,12 +93,12 @@ export const en = {
   },
   navigation: {
     ...common.navigation,
-    // custom: [
-    //   {
-    //     label: "CamLife",
-    //     link: "https://camlife.cn",
-    //   },
-    // ],
+    custom: [
+      {
+        // label: "CamLife",
+        // link: "https://camlife.cn",
+      },
+    ],
   },
   pageMeta: {
     archive: {
