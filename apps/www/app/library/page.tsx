@@ -37,7 +37,7 @@ export default function Page() {
         <p className="text-3xl font-bold">Favourites</p>
         <FavouriteSongs LIMIT={3} />
         {favouriteSongIds.length > 3 && (
-          <Link className="text-lg" href="/library/favourites">
+          <Link className="text-lg" href="/favourites">
             View all favourites
           </Link>
         )}
