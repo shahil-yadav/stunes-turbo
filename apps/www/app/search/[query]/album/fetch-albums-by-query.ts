@@ -5,7 +5,9 @@ import {
 import { BASE_URL } from "@/lib/constants";
 
 export async function fetchAlbumsByQuery(query: string) {
-  const response = await fetch(`${BASE_URL}/search/albums?query=${query}`);
+  const response = await fetch(`${BASE_URL}/search/albums?query=${query}`, {
+    cache: "force-cache",
+  });
   if (!response.ok) {
     throw new Error(
       `Failed to fetch albums by search query of ${query}, ${response.statusText}`,

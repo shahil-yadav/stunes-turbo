@@ -3,17 +3,17 @@
 import parse from "html-react-parser";
 import { Music } from "lucide-react";
 import Link from "next/link";
-
 import { FavouriteIconSyncedWithRedux } from "@/components/music-players/secondary-music-player";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { addSongsInThePlaylist } from "@/lib/redux/controls-slice";
 import { useAppDispatch } from "@/lib/redux/hooks";
 import { prettySeconds } from "@/lib/utils";
+import { ZodSongReduxPlaylistSchema } from "@/components/recommendations/fetch-recommendations";
+import { z } from "zod";
 
-export interface SongReduxPlaylistSchema {
-  url: string;
-  songId: string;
-}
+export type SongReduxPlaylistSchema = z.infer<
+  typeof ZodSongReduxPlaylistSchema
+>;
 
 interface SongCardUiSchema {
   label: string;
@@ -44,7 +44,7 @@ export function ListSongCard(props: ListSongCardProps) {
       <div className="grow cursor-pointer space-y-4">
         <div>
           <button onClick={dispatchAddSongInThePlaylist}>
-            <p className="text-lg">{parse(props.label)}</p>
+            <p className="text-left">{parse(props.label)}</p>
           </button>
         </div>
         <div className="flex items-end gap-5 text-gray-500">

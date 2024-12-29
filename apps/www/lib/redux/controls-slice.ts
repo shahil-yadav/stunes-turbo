@@ -46,15 +46,12 @@ export const controlsSlice = createSlice({
   name: "playerControls",
   initialState: initialReduxStateOfControlsSlice,
   reducers: {
-    // addRecommendationInThePlaylist: (state, action: PayloadAction<SongSchema[]>) => {
-    //     const presentSongsIds = state.playlist.songs.map((song) => song.id.song)
-    //     const songsToPush = action.payload.filter((song) => {
-    //         if (presentSongsIds.includes(song.id.song)) return
-    //         else return song
-    //     })
-    //
-    //     state.playlist.songs.push(...songsToPush)
-    // },
+    addRecommendationInThePlaylist: (
+      state,
+      action: PayloadAction<SongReduxPlaylistSchema[]>,
+    ) => {
+      state.playlist.songs.push(...action.payload);
+    },
 
     addSongsInThePlaylist: (
       state,
@@ -86,7 +83,7 @@ export const controlsSlice = createSlice({
       state,
       action: PayloadAction<{ songId: string }>,
     ) => {
-      state.favourites.push(action.payload.songId);
+      state.favourites.unshift(action.payload.songId);
     },
 
     removeSongFromTheFavourites: (
@@ -179,6 +176,7 @@ export const controlsSlice = createSlice({
     },
   },
   selectors: {
+    selectPlaylistSongs: (state) => state.playlist.songs,
     selectActiveSongIndex: (state) => state.playlist.activeSongIndex,
     selectActiveSong: (state) => {
       const playlist = state.playlist;
@@ -229,15 +227,16 @@ export const {
   selectIsActiveSongCurrentlyPlaying,
   selectHistorySongIds,
   selectFavouriteSongIds,
+  selectPlaylistSongs,
 } = controlsSlice.selectors;
 
 export const {
+  addRecommendationInThePlaylist,
   addSongsInThePlaylist,
   addActiveSongInTheHistory,
   changeActiveSongTrackByStep,
   addSongInTheFavourites,
   removeSongFromTheFavourites,
-  changeActiveSongTrack,
   setActiveSongIndex,
   setIsReady,
   setIsPlaying,

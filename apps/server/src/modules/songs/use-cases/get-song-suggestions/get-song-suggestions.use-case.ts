@@ -5,7 +5,7 @@ import { CreateSongStationUseCase } from '#modules/songs/use-cases'
 import { HTTPException } from 'hono/http-exception'
 import type { IUseCase } from '#common/types'
 import type { SongModel, SongSuggestionAPIResponseModel } from '#modules/songs/models'
-import type { z } from 'zod'
+import { object, z } from 'zod'
 
 export interface GetSongSuggestionsArgs {
   songId: string
@@ -21,7 +21,6 @@ export class GetSongSuggestionsUseCase implements IUseCase<GetSongSuggestionsArg
 
   async execute({ songId, limit }: GetSongSuggestionsArgs) {
     const stationId = await this.createSongStation.execute(songId)
-
     const { data, ok } = await useFetch<z.infer<typeof SongSuggestionAPIResponseModel>>({
       endpoint: Endpoints.songs.suggestions,
       params: {
@@ -31,7 +30,7 @@ export class GetSongSuggestionsUseCase implements IUseCase<GetSongSuggestionsArg
       context: 'android'
     })
 
-    if (!data || !ok) {
+    if (data?.error || !ok) {
       throw new HTTPException(404, { message: `no suggestions found for the given song` })
     }
 

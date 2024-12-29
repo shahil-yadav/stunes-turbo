@@ -161,7 +161,7 @@ Home.get('/', (c) => {
               </div>
             </a>
 
-            <div class="p-4 sm:p-8 hover:bg-opacity-5 hover:bg-white rounded-lg duration-100 sm:col-span-4">
+            <div class="p-4 cursor-not-allowed sm:p-8 hover:bg-opacity-5 hover:bg-white rounded-lg duration-100 sm:col-span-4">
               <div class="flex flex-col">
                 <span class="text-xs uppercase bg-opacity-15 rounded text-center max-w-fit px-2 py-1 font-bold tracking-wide bg-blue-500 text-blue-500">
                   Contact
@@ -208,7 +208,7 @@ Home.get('/', (c) => {
 
 function ShahilYadav() {
   return (
-    <div className="p-4 sm:p-8 hover:bg-opacity-5 hover:bg-white rounded-lg duration-100 sm:col-span-4">
+    <div className="p-4 cursor-not-allowed sm:p-8 hover:bg-opacity-5 hover:bg-white rounded-lg duration-100 sm:col-span-4">
       <div className="flex flex-col">
         <span className="text-xs uppercase bg-opacity-15 rounded text-center max-w-fit px-2 py-1 font-bold tracking-wide bg-rose-500 text-rose-500">
           Contact

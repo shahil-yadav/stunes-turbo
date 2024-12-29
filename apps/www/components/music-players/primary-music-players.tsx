@@ -62,6 +62,7 @@ export function PrimaryMusicPlayer() {
   );
   const { seekProgressOfActiveSong, totalSongDurationOfActiveSong } =
     useGetTimeProgressOfActiveSong();
+
   const dispatch = useAppDispatch();
   return (
     <div className="flex w-full flex-col">
