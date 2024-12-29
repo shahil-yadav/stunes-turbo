@@ -11,7 +11,7 @@ import { StoreProvider } from "./StoreProvider";
 
 export const metadata: Metadata = {
   title: "stunes",
-  description: "Made by Shahil Yadav, jiosaavn wrapper",
+  description: "Just a dev",
 };
 
 export default function RootLayout({
