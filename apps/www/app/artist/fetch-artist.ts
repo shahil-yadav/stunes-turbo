@@ -37,7 +37,7 @@ export function createAlbumPayload(albums) {
 
 export async function fetchArtist(artistId: string) {
   const response = await fetch(`${BASE_URL}/artists/${artistId}`, {
-    cache: "force-cache",
+    // cache: "force-cache",
   });
 
   if (!response.ok) {
@@ -47,6 +47,7 @@ export async function fetchArtist(artistId: string) {
   }
 
   const { data } = await response.json();
+  console.log(data);
   const formattedData = {
     info: {
       name: data?.name,

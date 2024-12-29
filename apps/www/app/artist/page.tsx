@@ -8,8 +8,6 @@ import { ListRoundCard } from "@/components/horizontal-cards/ui-cards";
 
 type SearchParams = Promise<{
   id?: string;
-  // songs_page?: string
-  // albums_page?: string
 }>;
 
 export default async function Page(props: { searchParams?: SearchParams }) {
@@ -17,7 +15,7 @@ export default async function Page(props: { searchParams?: SearchParams }) {
   if (!searchParams?.id) redirect("/");
 
   const data = await fetchArtist(searchParams.id);
-
+    console.log(data);
   return (
     <>
       <DisplayImageCard imageSrc={data.info.imgSrc} alt={data.info.name} />

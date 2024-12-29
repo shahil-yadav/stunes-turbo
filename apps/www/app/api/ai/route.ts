@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { BASE_URL_2 } from "@/lib/constants";
+import {BASE_URL} from "@/lib/constants";
 
 export async function GET(req: NextRequest) {
   const searchParams = req.nextUrl.searchParams;
@@ -11,7 +11,7 @@ export async function GET(req: NextRequest) {
     );
   }
 
-  const response = await fetch(`${BASE_URL_2}/songs/${songId}/suggestions`);
+  const response = await fetch(`${BASE_URL}/songs/${songId}/suggestions`);
   const json = await response.json();
   return NextResponse.json(json, { status: 200 });
 }
