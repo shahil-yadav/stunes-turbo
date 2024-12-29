@@ -23,4 +23,6 @@ And that's how I ended up with this absolute unit of a monorepo - got my app, cu
 ### The React 19 Pain Train
 Oh boy, React 19... don't even get me started. The whole React ecosystem is still stuck on v18 and here I am, living dangerously. My solution? Just used the `--force` flag that dependency tree like a caveman. Sometimes you gotta do what you gotta do ¯\_(ツ)_/¯
 
+Kinda proud, i finished it in a week.
+
 *typed while questioning my life choices and dependency management skills*
