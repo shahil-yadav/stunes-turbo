@@ -23,7 +23,7 @@ function InnerMusicRecommendations({ songId }: { songId: string }) {
 
   React.useEffect(() => {
     if (swr.error) {
-      toast.error(swr.error.toString());
+      toast.error("Cannot laod AI recommendations");
       console.error(swr.error);
     }
 
