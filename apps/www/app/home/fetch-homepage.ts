@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-import { BASE_URL } from "@/lib/constants";
+import { BASE_URL_2} from "@/lib/constants";
 
 export const homepageSchema = z
   .object({
@@ -17,7 +17,7 @@ export const homepageSchema = z
   .array();
 
 export async function fetchHomepage() {
-  const response = await fetch(`${BASE_URL}/homepage`, {
+  const response = await fetch(`${BASE_URL_2}/homepage`, {
     cache: "force-cache",
   });
 
