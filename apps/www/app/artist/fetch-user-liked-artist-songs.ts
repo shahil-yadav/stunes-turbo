@@ -9,13 +9,13 @@ async function getArtistIdFromTheSongId(songId:string) {
     return z.string().array().parse(artistIds)
 }
 
-async function createPayloadOfArtistWithSongId(songsIds:string[]) {
-    const schema = z.object({artistId:z.string(), songId:z.string()}).array();
+async function createFilteredPayloadOfArtistWithSongId(songsIds:string[], artistId:string) {
+    const schema = z.string().array();
     const arr:  z.infer<typeof schema> = []
     for (const songId of songsIds) {
-        const artistIds = await getArtistIdFromTheSongId(songId)
-        for (const artistId of artistIds) {
-            arr.push({artistId, songId})
+        const songArtistIdsSet = new Set(await getArtistIdFromTheSongId(songId))
+        if (songArtistIdsSet.has(artistId)) {
+            arr.push(songId)
         }
     }
     return schema.parse(arr)
@@ -27,10 +27,6 @@ interface fetchUserLikedSongIdsArgs {
 }
 
 export async function fetchUserLikedSongIds({songIds, artistId}: fetchUserLikedSongIdsArgs) {
-  const results = await createPayloadOfArtistWithSongId(songIds);
-  const filteredResults = results
-    .filter((result) => result.artistId === artistId)
-    .map((result) => result.songId);
-
-  return filteredResults;
+  const results = await createFilteredPayloadOfArtistWithSongId(songIds, artistId);
+  return results;
 }
