@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from "next/server";
-
 import { BASE_URL } from "@/lib/constants";
 
 export async function GET(req: NextRequest) {
@@ -12,7 +11,7 @@ export async function GET(req: NextRequest) {
     );
   }
 
-  const response = await fetch(`${BASE_URL}/songs/${songId}`);
+  const response = await fetch(`${BASE_URL}/songs/${songId}`, { cache: "force-cache" });
   const json = await response.json();
   return NextResponse.json(json, { status: 200 });
 }

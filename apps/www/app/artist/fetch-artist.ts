@@ -47,7 +47,6 @@ export async function fetchArtist(artistId: string) {
   }
 
   const { data } = await response.json();
-  console.log(data);
   const formattedData = {
     info: {
       name: data?.name,
