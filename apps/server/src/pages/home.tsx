@@ -235,7 +235,7 @@ function ShahilYadav() {
           </a>
           , or{' '}
           <a
-            href="https://t.me/sumitkolhe"
+            href="https://stunes-turbo-blog.vercel.app/en/"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:underline text-pink-500"
