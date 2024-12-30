@@ -43,6 +43,8 @@ export function SearchBar() {
   const isSearchEnabled = useEnableAtPath("/search");
 
   React.useEffect(() => {
+    if(!isSearchEnabled) return;
+
     if (query) router.replace(`/search/${query}/${activeSearchState}`);
     else router.replace("/search");
   }, [query]);
