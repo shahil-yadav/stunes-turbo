@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "install": "npm install --force",
     "dev": "next dev --turbopack -p 4321",
     "clean": "rm -rf node_modules",
     "build": "npm run clean && next build",
