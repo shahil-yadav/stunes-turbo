@@ -1,6 +1,6 @@
 import {z} from "zod";
 
-async function getArtistIdFromTheSongId(songId:string) {
+export async function getArtistIdFromTheSongId(songId:string) {
     const response = await fetch(`/api/songs?songId=${songId}`);
     if(!response.ok)
         throw new Error(`${response.statusText} ${response.status}`);

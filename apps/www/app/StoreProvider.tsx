@@ -10,6 +10,10 @@ import { PersistGate } from "redux-persist/integration/react";
 import { Audio } from "@/lib/redux/audio";
 import { type AppStore, makeStore } from "@/lib/redux/store";
 import { MusicRecommendations } from "@/components/recommendations/music-recommendations";
+import { SWRConfig } from "swr";
+import { SwrRestApiError } from "@/lib/utils/custom-error";
+import { z } from "zod";
+import { globalSwrConfigFetcher } from "@/lib/swr/global-config-fetcher";
 
 interface Props {
   readonly children: ReactNode;
@@ -38,9 +42,15 @@ export const StoreProvider = ({ children }: Props) => {
 
   return (
     <Provider store={storeRef.current}>
-      <PersistGate loading={null} persistor={persistRef.current}>
-        {children}
-      </PersistGate>
+      <SWRConfig
+        value={{
+          fetcher: globalSwrConfigFetcher,
+        }}
+      >
+        <PersistGate loading={null} persistor={persistRef.current}>
+          {children}
+        </PersistGate>
+      </SWRConfig>
       <MusicRecommendations />
       <Audio />
     </Provider>

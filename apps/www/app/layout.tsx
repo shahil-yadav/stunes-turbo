@@ -1,12 +1,10 @@
 import "./globals.css";
 
 import type { Metadata } from "next";
-
 import { localFonts } from "@/app/fonts";
 import { AppLayout } from "@/components/layout";
 import { Toaster } from "@/components/ui/sonner";
 import { cn } from "@/lib/utils";
-
 import { StoreProvider } from "./StoreProvider";
 
 export const metadata: Metadata = {

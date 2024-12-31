@@ -1,26 +1,47 @@
-"use client"
+"use client";
 
-import {useAppSelector} from "@/lib/redux/hooks";
-import {selectHistorySongIds} from "@/lib/redux/controls-slice";
+import { useAppSelector } from "@/lib/redux/hooks";
+import { selectHistorySongIds } from "@/lib/redux/controls-slice";
 import useSWRImmutable from "swr/immutable";
-import {fetchUserLikedSongIds} from "@/app/artist/fetch-user-liked-artist-songs";
-import {LibrarySong} from "@/app/library/library-song";
+import { LibrarySong } from "@/app/library/library-song";
+import { z } from "zod";
+import React from "react";
 
-export function RecommendedArtistSongsBaseOnClientHistory({artistId}: {artistId: string;}) {
+export function RecommendedArtistSongsBaseOnClientHistory({
+  artistId,
+}: {
+  artistId: string;
+}) {
   const songIds = useAppSelector(selectHistorySongIds);
-  const swr = useSWRImmutable({ songIds, artistId },fetchUserLikedSongIds);
-
-  
-  if (swr.isLoading) return "Getting your most listened songs from this artist";
-  if(swr.error) {
-      console.error(swr.error);
-    return "Error Getting the music recommendations";
-  }
-  return swr.data && <UserFavouriteArtistSongs songIds={swr.data} />;
+  return (
+    <div className="my-5">
+      <p className="text-3xl">Yours top &apos;s favourites listened</p>
+      {songIds.map((songId) => (
+        <Recommendations key={songId} songId={songId} artistId={artistId} />
+      ))}
+    </div>
+  );
 }
 
-function UserFavouriteArtistSongs(props:{songIds:string[]}){
-    return (props.songIds.map(songId=>(
-        <LibrarySong key={songId} songId={songId} />
-    )))    
+function Recommendations({
+  songId,
+  artistId,
+}: {
+  songId: string;
+  artistId: string;
+}) {
+  const swr = useSWRImmutable(`/api/songs?songId=${songId}`);
+  const [isDisplay, setIsDisplay] = React.useState<boolean>(false);
+
+  React.useEffect(() => {
+    if (swr.isLoading || swr.error) return;
+    const data = swr.data ?? [];
+    const artistIds = data?.at(0).artists?.all?.map((artist) => artist?.id);
+    const parsedResults = z.string().array().safeParse(artistIds);
+    if (parsedResults.success && parsedResults.data.includes(artistId)) {
+      setIsDisplay(true);
+    }
+  }, [swr.data, swr.isLoading, swr.error, artistId]);
+
+  return isDisplay && <LibrarySong songId={songId} />;
 }
