@@ -1,6 +1,6 @@
-"use client";
+"use client"
 
-import { ReactEventHandler, useEffect, useRef } from "react";
+import { ReactEventHandler, useEffect, useRef } from "react"
 
 import {
   addActiveSongInTheHistory,
@@ -12,73 +12,65 @@ import {
   setIsSeeking,
   setSeekProgress,
   setTotalSongDuration,
-  setVolume,
-} from "@/lib/redux/controls-slice";
-import { useAppDispatch, useAppSelector } from "@/lib/redux/hooks";
+  setVolume
+} from "@/lib/redux/controls-slice"
+import { useAppDispatch, useAppSelector } from "@/lib/redux/hooks"
 
 export function Audio() {
-  const audio = useRef<HTMLAudioElement>(null);
-  const dispatch = useAppDispatch();
-  const { activeSongIndex, songs } = useAppSelector(
-    (state) => state.playerControls.playlist,
-  );
+  const audio = useRef<HTMLAudioElement>(null)
+  const dispatch = useAppDispatch()
+  const { activeSongIndex, songs } = useAppSelector((state) => state.playerControls.playlist)
   const { volume: activeVolume, ...activeSongStates } = useAppSelector(
-    (state) => state.playerControls.activeSongStates,
-  );
-  const activeSong = useAppSelector(selectActiveSong);
+    (state) => state.playerControls
+  )
+  const activeSong = useAppSelector(selectActiveSong)
   const handleBufferProgress: ReactEventHandler<HTMLAudioElement> = (e) => {
-    const audio = e.currentTarget;
-    const dur = audio.duration;
+    const audio = e.currentTarget
+    const dur = audio.duration
     if (dur > 0) {
       for (let i = 0; i < audio.buffered.length; i++) {
-        if (
-          audio.buffered.start(audio.buffered.length - 1 - i) <
-          audio.currentTime
-        ) {
-          const bufferedLength = audio.buffered.end(
-            audio.buffered.length - 1 - i,
-          );
-          dispatch(setBufferedProgress(bufferedLength));
-          break;
+        if (audio.buffered.start(audio.buffered.length - 1 - i) < audio.currentTime) {
+          const bufferedLength = audio.buffered.end(audio.buffered.length - 1 - i)
+          dispatch(setBufferedProgress(bufferedLength))
+          break
         }
       }
     }
-  };
+  }
 
   useEffect(() => {
-    if (audio.current === null) return;
-    if (activeSongStates.isPlaying) audio.current.pause();
+    if (audio.current === null) return
+    if (activeSongStates.isPlaying) audio.current.pause()
 
-    audio.current.load();
+    audio.current.load()
 
     if (activeSongStates.isReady) {
-      audio.current.play();
+      audio.current.play()
     } else {
-      audio.current.pause();
+      audio.current.pause()
     }
-  }, [activeSongStates.isReady, activeSongIndex]);
+  }, [activeSongStates.isReady, activeSongIndex])
 
   useEffect(() => {
     if (activeSong?.songId) {
-      dispatch(addActiveSongInTheHistory());
+      dispatch(addActiveSongInTheHistory())
     }
-  }, [activeSong?.songId]);
+  }, [activeSong?.songId])
 
   useEffect(() => {
-    if (audio.current === null) return;
-    if (activeSongStates.isPlaying) audio.current.play();
-    else audio.current.pause();
-  }, [activeSongStates.isPlaying]);
+    if (audio.current === null) return
+    if (activeSongStates.isPlaying) audio.current.play()
+    else audio.current.pause()
+  }, [activeSongStates.isPlaying])
 
   useEffect(() => {
-    if (audio.current === null) return;
+    if (audio.current === null) return
 
     if (activeSongStates.isSeeking) {
-      audio.current.currentTime =
-        activeSongStates.progressIndicator.seekProgress;
-      dispatch(setIsSeeking(false));
+      audio.current.currentTime = activeSongStates.progressIndicator.seekProgress
+      dispatch(setIsSeeking(false))
     }
-  }, [activeSongStates.isSeeking]);
+  }, [activeSongStates.isSeeking])
 
   return (
     activeSong && (
@@ -87,35 +79,35 @@ export function Audio() {
         src={activeSong.url}
         preload="metadata"
         onDurationChange={(e) => {
-          const duration = e.currentTarget.duration;
-          dispatch(setTotalSongDuration(duration));
+          const duration = e.currentTarget.duration
+          dispatch(setTotalSongDuration(duration))
         }}
         onPlaying={() => {
-          dispatch(setIsPlaying(true));
+          dispatch(setIsPlaying(true))
         }}
         onPause={() => {
-          dispatch(setIsPlaying(false));
+          dispatch(setIsPlaying(false))
         }}
         onEnded={() => {
           if (activeSongIndex !== songs.length - 1)
-            dispatch(setActiveSongIndex(activeSongIndex + 1));
+            dispatch(setActiveSongIndex(activeSongIndex + 1))
         }}
         onCanPlay={(e) => {
-          e.currentTarget.volume = activeVolume;
+          e.currentTarget.volume = activeVolume
           // setVolume(e.currentTarget.volume);
-          dispatch(setVolume(activeVolume));
-          dispatch(setIsReady(true));
+          dispatch(setVolume(activeVolume))
+          dispatch(setIsReady(true))
         }}
         onTimeUpdate={(e) => {
-          e.currentTarget.volume = activeVolume;
-          dispatch(setSeekProgress(e.currentTarget.currentTime));
-          handleBufferProgress(e);
+          e.currentTarget.volume = activeVolume
+          dispatch(setSeekProgress(e.currentTarget.currentTime))
+          handleBufferProgress(e)
         }}
         onProgress={handleBufferProgress}
         onVolumeChange={(e) => dispatch(setVolume(e.currentTarget.volume))}
       />
     )
-  );
+  )
 }
 
 /**
