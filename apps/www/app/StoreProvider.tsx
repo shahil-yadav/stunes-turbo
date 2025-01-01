@@ -7,10 +7,11 @@ import { Provider } from "react-redux"
 import { persistStore } from "redux-persist"
 import { Persistor } from "redux-persist/es/types"
 import { PersistGate } from "redux-persist/integration/react"
+import { SWRConfig } from "swr"
+
+import { MusicRecommendations } from "@/components/recommendations/music-recommendations"
 import { Audio } from "@/lib/redux/audio"
 import { type AppStore, makeStore } from "@/lib/redux/store"
-import { MusicRecommendations } from "@/components/recommendations/music-recommendations"
-import { SWRConfig } from "swr"
 import { globalSwrConfigFetcher } from "@/lib/swr/global-config-fetcher"
 
 interface Props {
