@@ -12,7 +12,7 @@ export function RecommendedArtistSongsBaseOnClientHistory({ artistId }: { artist
   const [isDisplayLabel, setIsDisplayLabel] = React.useState<boolean>(false)
   return (
     <div className="my-5">
-      {isDisplayLabel && <p className="text-3xl">Yours top &apos;s favourites listened</p>}
+      {isDisplayLabel && <p className="text-2xl">Yours most listened</p>}
       {songIds.map((songId) => (
         <Recommendations
           key={songId}
