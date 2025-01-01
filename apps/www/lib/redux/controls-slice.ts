@@ -156,6 +156,7 @@ export const controlsSlice = createSlice({
       const playlist = state.playlist
       return playlist.songs[playlist.activeSongIndex]
     },
+    selectActiveSongStates: (state) => state.activeSongStates,
     selectVolumeBarProgress: (state) => state.volume,
     selectTotalSongDurationOfActiveSong: (state) =>
       state.activeSongStates.progressIndicator.totalSongDuration,
@@ -193,6 +194,7 @@ export const {
   selectIsActiveSongCurrentlyPlaying,
   selectHistorySongIds,
   selectFavouriteSongIds,
+  selectActiveSongStates,
   selectPlaylistSongs
 } = controlsSlice.selectors
 

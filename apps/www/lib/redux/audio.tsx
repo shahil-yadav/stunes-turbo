@@ -5,6 +5,8 @@ import { ReactEventHandler, useEffect, useRef } from "react"
 import {
   addActiveSongInTheHistory,
   selectActiveSong,
+  selectActiveSongStates,
+  selectVolumeBarProgress,
   setActiveSongIndex,
   setBufferedProgress,
   setIsPlaying,
@@ -20,9 +22,8 @@ export function Audio() {
   const audio = useRef<HTMLAudioElement>(null)
   const dispatch = useAppDispatch()
   const { activeSongIndex, songs } = useAppSelector((state) => state.playerControls.playlist)
-  const { volume: activeVolume, ...activeSongStates } = useAppSelector(
-    (state) => state.playerControls
-  )
+  const activeVolume = useAppSelector(selectVolumeBarProgress)
+  const activeSongStates = useAppSelector(selectActiveSongStates)
   const activeSong = useAppSelector(selectActiveSong)
   const handleBufferProgress: ReactEventHandler<HTMLAudioElement> = (e) => {
     const audio = e.currentTarget
