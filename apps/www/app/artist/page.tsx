@@ -5,6 +5,7 @@ import { DisplayImageCard } from "@/components/horizontal-cards/display-image-ca
 import { HorizontalScrollableContainer } from "@/components/horizontal-cards/horizontal-scrollable-container";
 import { ListSongCard } from "@/components/horizontal-cards/list-song-card";
 import { ListRoundCard } from "@/components/horizontal-cards/ui-cards";
+import {RecommendedArtistSongsBaseOnClientHistory} from "@/app/artist/UserFavouriteArtistSongs";
 
 type SearchParams = Promise<{
   id?: string;
@@ -15,10 +16,10 @@ export default async function Page(props: { searchParams?: SearchParams }) {
   if (!searchParams?.id) redirect("/");
 
   const data = await fetchArtist(searchParams.id);
-    console.log(data);
   return (
     <>
       <DisplayImageCard imageSrc={data.info.imgSrc} alt={data.info.name} />
+      <RecommendedArtistSongsBaseOnClientHistory artistId={searchParams.id}/>
       <div>
         <p className="text-3xl">Songs</p>
         {data.songs.map((song) => (

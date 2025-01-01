@@ -12,10 +12,8 @@ export const customFetcherSWR = async (url: string) => {
 };
 
 export function useGetDetailsOfSongForLibrarySection(songId: string) {
-  const { data, ...swr } = useSWRImmutable(
-    `api/songs?songId=${songId}`,
-    customFetcherSWR,
-  );
+  const { data, ...swr } = useSWRImmutable(`api/songs?songId=${songId}`);
+
   // FIXME Deliberate failing
   // const { data, ...swr } = useSWR(`${BASE_URL}/song/${songId}`, customFetcherSWR)
   const song = data?.at(0);

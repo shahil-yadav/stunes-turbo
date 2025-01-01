@@ -12,15 +12,15 @@ export function createAlbumPayload(data) {
 }
 
 export async function fetchSongs(id: string) {
-  const responseSongs = await fetch(`${BASE_URL}/songs/${id}`, {
+  const response = await fetch(`${BASE_URL}/songs/${id}`, {
     cache: "force-cache",
   });
-  if (!responseSongs.ok) {
+  if (!response.ok) {
     throw new Error(
-      `Failed to fetch song=[${id}], HTTP-STATUS-CODE ${responseSongs.status}`,
+      `Failed to fetch song=[${id}], HTTP-STATUS-CODE ${response.status}`,
     );
   }
-  const { data: songsData } = await responseSongs?.json();
+  const { data: songsData } = await response.json();
   const albumId = songsData[0].album.id;
   if (!albumId) throw new Error("Album id is undefined");
 

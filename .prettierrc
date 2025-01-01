@@ -1,0 +1,7 @@
+{
+  "singleAttributePerLine": true,
+  "printWidth": 100,
+  "semi": false,
+  "trailingComma": "none",
+  "tabWidth": 2
+}
