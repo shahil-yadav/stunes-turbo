@@ -1,6 +1,7 @@
+import useSWRImmutable from "swr/immutable";
+
 import { SingleHorizontalCardSchema } from "@/components/horizontal-cards/ui-cards";
 import { ImageQualityEnum } from "@/lib/types/enum";
-import useSWRImmutable from "swr/immutable";
 
 export const customFetcherSWR = async (url: string) => {
   const response = await fetch(url);

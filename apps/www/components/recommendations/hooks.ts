@@ -1,8 +1,8 @@
-import { useAppSelector } from "@/lib/redux/hooks";
 import {
   selectActiveSongIndex,
   selectPlaylistSongs,
 } from "@/lib/redux/controls-slice";
+import { useAppSelector } from "@/lib/redux/hooks";
 
 /**
  * Doesn't need to add songs if the playlist is of length (10)

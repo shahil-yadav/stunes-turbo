@@ -1,4 +1,5 @@
 import { z } from "zod";
+
 import { SongQualityInKkbps } from "@/lib/types/enum";
 
 export const ZodSongReduxPlaylistSchema = z.object({

@@ -1,12 +1,12 @@
 "use client";
 
+import parse from "html-react-parser";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { z } from "zod";
 
 import { Skeleton } from "@/components/ui/skeleton";
 import { cn, prettySeconds } from "@/lib/utils";
-import parse from "html-react-parser";
 
 interface ListRoundCardProps {
   id: string;

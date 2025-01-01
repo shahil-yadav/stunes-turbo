@@ -7,14 +7,14 @@ import { Provider } from "react-redux";
 import { persistStore } from "redux-persist";
 import { Persistor } from "redux-persist/es/types";
 import { PersistGate } from "redux-persist/integration/react";
+
+import { MusicRecommendations } from "@/components/recommendations/music-recommendations";
 import { Audio } from "@/lib/redux/audio";
 import { type AppStore, makeStore } from "@/lib/redux/store";
-import { MusicRecommendations } from "@/components/recommendations/music-recommendations";
 
 interface Props {
   readonly children: ReactNode;
 }
-
 export const StoreProvider = ({ children }: Props) => {
   const storeRef = useRef<AppStore | null>(null);
   const persistRef = useRef<Persistor | null>(null);

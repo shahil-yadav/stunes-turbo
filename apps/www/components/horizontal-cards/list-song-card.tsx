@@ -3,13 +3,14 @@
 import parse from "html-react-parser";
 import { Music } from "lucide-react";
 import Link from "next/link";
+import { z } from "zod";
+
 import { FavouriteIconSyncedWithRedux } from "@/components/music-players/secondary-music-player";
+import { ZodSongReduxPlaylistSchema } from "@/components/recommendations/fetch-recommendations";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { addSongsInThePlaylist } from "@/lib/redux/controls-slice";
 import { useAppDispatch } from "@/lib/redux/hooks";
 import { prettySeconds } from "@/lib/utils";
-import { ZodSongReduxPlaylistSchema } from "@/components/recommendations/fetch-recommendations";
-import { z } from "zod";
 
 export type SongReduxPlaylistSchema = z.infer<
   typeof ZodSongReduxPlaylistSchema

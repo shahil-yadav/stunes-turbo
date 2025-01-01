@@ -1,15 +1,16 @@
 "use client";
 
+import React from "react";
+import { toast } from "sonner";
 import useSWR from "swr";
+
+import { fetchMusicRecommendationsSWR } from "@/components/recommendations/fetch-recommendations";
 import {
   useEnableAiMusicRecommendations,
   useGetSongIdFromReduxSongsPlaylist,
 } from "@/components/recommendations/hooks";
-import React from "react";
-import { fetchMusicRecommendationsSWR } from "@/components/recommendations/fetch-recommendations";
-import { useAppDispatch } from "@/lib/redux/hooks";
 import { addRecommendationInThePlaylist } from "@/lib/redux/controls-slice";
-import { toast } from "sonner";
+import { useAppDispatch } from "@/lib/redux/hooks";
 
 export function MusicRecommendations() {
   const songId = useGetSongIdFromReduxSongsPlaylist();
