@@ -27,7 +27,7 @@ export function RecommendedArtistSongsBaseOnClientHistory({ artistId }: { artist
 
 function Recommendations({
   songId,
-  artistId
+  artistId,
   setIsDisplayLabel
 }: {
   songId: string
