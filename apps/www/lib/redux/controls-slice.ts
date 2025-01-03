@@ -2,27 +2,11 @@ import { createSlice, type PayloadAction } from "@reduxjs/toolkit"
 import _ from "lodash"
 
 import { useAppDispatch, useAppSelector } from "@/lib/redux/hooks"
+import { InitialStateOfControlSlice } from "@/lib/redux/persist"
 
 type SongReduxPlaylistSchema = { url: string; songId: string }
 
-export interface InitialStateInterface {
-  history: string[]
-  favourites: string[]
-  playlist: { songs: SongReduxPlaylistSchema[]; activeSongIndex: number }
-  volume: number
-  activeSongStates: {
-    isReady: boolean
-    isPlaying: boolean
-    isSeeking: boolean
-    progressIndicator: {
-      bufferedDuration: number
-      totalSongDuration: number
-      seekProgress: number
-    }
-  }
-}
-
-const initialReduxStateOfControlsSlice: InitialStateInterface = {
+const initialReduxStateOfControlsSlice: InitialStateOfControlSlice = {
   history: [],
   favourites: [],
   playlist: {
