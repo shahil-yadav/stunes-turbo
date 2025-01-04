@@ -1,23 +1,24 @@
-import { Suspense } from "react";
-
-import { fetchHomepage } from "@/app/home/fetch-homepage";
+import { Suspense } from "react"
+import { fetchHomepage } from "@/app/home/fetch-homepage"
 import {
   MultipleCardHorizontalSkeletonList,
-  SingleHorizontalCard,
-} from "@/components/horizontal-cards/ui-cards";
+  SingleHorizontalCard
+} from "@/components/horizontal-cards/ui-cards"
+import { Info } from "@/app/home/info"
 
 export default async function Page() {
   return (
     <div className="space-y-5">
+      <Info />
       <Suspense fallback={<MultipleCardHorizontalSkeletonList />}>
         <HomepageSongs />
       </Suspense>
     </div>
-  );
+  )
 }
 
 async function HomepageSongs() {
-  const data = await fetchHomepage();
+  const data = await fetchHomepage()
 
   return data.map((item) => (
     <div key={item.title}>
@@ -35,7 +36,7 @@ async function HomepageSongs() {
         ))}
       </div>
     </div>
-  ));
+  ))
 }
 
 /* export default function Page() {
