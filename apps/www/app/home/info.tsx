@@ -63,6 +63,7 @@ const AvatarPencil = (props: { state: "Create" | "Edit" }) => {
     <Dialog>
       <DialogTrigger asChild>
         <Button
+          className="shrink-0"
           size="icon"
           variant="outline"
         >
