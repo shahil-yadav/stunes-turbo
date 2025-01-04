@@ -22,37 +22,35 @@ export function Info() {
 
   if (!profileUrl || !name)
     return (
-      <div className="flex items-center my-2 justify-between">
-        <div className="flex items-center gap-4">
-          <Avatar className="shrink-0">
-            <AvatarFallback>
-              <Person20Regular />
-            </AvatarFallback>
-          </Avatar>
-          <div>
-            <p>Generate your profile</p>
-            <p className="text-xs text-muted-foreground">
-              I&#39;ll add personalised profile section later onwards
-            </p>
-          </div>
+      <div className="grid items-center grid-cols-[2.5rem_1fr_2.5rem] gap-5">
+        <Avatar className="shrink-0">
+          <AvatarFallback>
+            <Person20Regular />
+          </AvatarFallback>
+        </Avatar>
+
+        <div>
+          <p>Generate your profile</p>
+          <p className="text-xs text-muted-foreground">
+            I&#39;ll add personalised profile section later onwards
+          </p>
         </div>
+
         <AvatarPencil state="Create" />
       </div>
     )
 
   return (
-    <div className="flex items-center my-2 justify-between">
-      <div className="flex items-center gap-4">
-        <Avatar className="shrink-0">
-          <AvatarImage
-            src={profileUrl}
-            alt={name}
-          />
-          <AvatarFallback>{name.slice(0, 2)}</AvatarFallback>
-        </Avatar>
-        <div>
-          <p>Hi {name},</p>
-        </div>
+    <div className="flex items-center gap-4">
+      <Avatar>
+        <AvatarImage
+          src={profileUrl}
+          alt={name}
+        />
+        <AvatarFallback>{name.slice(0, 2)}</AvatarFallback>
+      </Avatar>
+      <div>
+        <p>Hi {name},</p>
       </div>
     </div>
   )
@@ -63,7 +61,6 @@ const AvatarPencil = (props: { state: "Create" | "Edit" }) => {
     <Dialog>
       <DialogTrigger asChild>
         <Button
-          className="shrink-0"
           size="icon"
           variant="outline"
         >
