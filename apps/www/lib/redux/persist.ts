@@ -2,7 +2,7 @@ import storage from "redux-persist/lib/storage"
 import { combineReducers } from "@reduxjs/toolkit"
 import { controlsSlice } from "@/lib/redux/controls-slice"
 import { persistReducer } from "redux-persist"
-import { profileSlice } from "@/lib/redux/profile-slice"
+import { Gender, profileSlice } from "@/lib/redux/profile-slice"
 import { SongReduxPlaylistSchema } from "@/components/horizontal-cards/list-song-card"
 
 export interface InitialStateOfControlSlice {
@@ -23,8 +23,9 @@ export interface InitialStateOfControlSlice {
 }
 
 export interface InitialStateOfProfileSlice {
-  url: string
-  name: string
+  profileImageUrl?: string
+  gender?: Gender
+  name?: string
 }
 
 const controlsPersistConfig = {
@@ -35,8 +36,7 @@ const controlsPersistConfig = {
 
 const profilePersistConfig = {
   key: "profile",
-  storage: storage,
-  whitelist: ["url"]
+  storage: storage
 }
 
 export const rootReducer = combineReducers({
