@@ -47,6 +47,6 @@
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.6.9",
     "sass": "^1.83.0",
-    "vercel": "^39.2.2"
+    "vercel": "^32.3.0"
   }
 }
