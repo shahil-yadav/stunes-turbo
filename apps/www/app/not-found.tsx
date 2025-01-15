@@ -1,11 +1,9 @@
-import Image from "next/image";
-
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/button"
 
 export default function NotFound() {
   return (
     <div>
-      <h2 className="text-3xl font-bold">Ye kahan aayega chirkut</h2>
+      <h2 className="text-3xl font-bold">Ye kahan aagya chirkut</h2>
       <p>Could not find requested resource</p>
       <img
         width={200}
@@ -16,5 +14,5 @@ export default function NotFound() {
       />
       <Button variant="outline">Redirect to home screen</Button>
     </div>
-  );
+  )
 }
